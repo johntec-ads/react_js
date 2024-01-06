@@ -330,10 +330,6 @@ function separaEquipes(param) {
       timeAmarelo.push(jogador);
     }
   });
-
-  console.log("Time Azul \n" + JSON.stringify(timeAzul));
-  console.log("Time Amarelo\n" + JSON.stringify(timeAmarelo));
-
   return {timeAzul, timeAmarelo}
 }
 
@@ -342,14 +338,14 @@ function separaEquipes(param) {
 function listaHtml(equipe) {
   const listaEquipe = document.createElement("ul");//Criação dos elementos de html
 
-  equipe.forEach((param) => {
+  equipe.forEach((param,index) => {
     //O item é uma linha
     const item = document.createElement("li");//Cada iteração vai criar uma linha
-    item.textContent = param.nome;
-    listaEquipe.appendChild(item);
+    let indexStr = (index + 1).toString().padStart(2, '0');//Convert indes p/ string
+    item.textContent = indexStr + '-' + param.nome;//Cria um nó de texo em item.
+    listaEquipe.appendChild(item);//Anexa item no elemento listaEquipe
   });
-
-  return listaEquipe;
+  return listaEquipe;//Retorna lista equipe com as alterações
 
 }
 
