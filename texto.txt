@@ -1,0 +1,147 @@
+/* const user = {
+  name : "John",
+  idade: 48,
+  adress: {
+    street : "Rua Vicente Canezin",
+    number : 120
+  }
+
+};
+
+document.body.innerText = Object.keys(user);
+document.body.innerText = Object.values(user);
+document.body.innerText = Object.entries(user); */
+
+//Desestruturação
+
+
+/* rest operator */
+/* const {name,idade, ...rest} = user 
+document.body.innerText = JSON.stringify(rest)*/
+
+/* const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const [first, second, , ...rest] = array;
+document.body.innerText = JSON.stringify({first, second, rest}); */
+
+/* short sintax 
+const nome = 'john';
+const idade = 48;*/
+
+//Criar um objeto usuário com estas informações.
+/* const user = {
+  nome,
+  idade
+}
+document.body.innerText = JSON.stringify({user}); */
+
+//Optional Chaining
+
+/* const user = {
+  name: "John",
+  age: 48,
+
+  address: {
+    street: "Rua Vicente Canezin",
+    number: 120,
+    zip: {
+      code: '86806566',
+      city: 'Apucarana'
+    },
+    showFullAddress() {
+      return 'ok'
+    }
+  }
+
+}; */
+/* document.body.innerText = user.address
+? user.address.zip
+? user.address.zip.code
+: 'Não informado'
+: 'Não informado' */
+
+/* Aplicação do Optional Chaining */
+/* document.body.innerText = user.address.showFullAddress?.() */
+
+/* const key = 'state' */
+
+
+/* Metodos de Array */
+
+/* for ( const i of array) {  
+  document.body.innerText += i
+} */
+
+/* array.forEach(item => {
+  document.body.innerText += item;
+}); */
+
+/* const novoArray = array.map(item => {
+  if ( item % 2 == 0) {
+    return item * 10    
+  } else {
+    return item * 5
+  }
+  
+  return item * 2
+}) */
+
+/* map, filter, every, every, some, find, findIndex, reduce */
+/* const array = [1, 2, 3, 4, 5];
+
+const novoArray = array.filter(item => item % 2 !== 0)
+
+document.body.innerText = JSON.stringify(novoArray); */
+
+
+
+/* const newArray = lista
+
+  .filter(item => item.habilidade === 3 &&
+    item.posicao === "meio")
+
+const somaHabilit = newArray.reduce((acum, valor) =>
+  acum + valor.habilidade
+  , 0) */
+
+
+//Para acessar o nome de cada item, deve-se fazer um loop.
+/* newArray.forEach(item => {
+  console.log(item.nome)
+}) */
+
+/* O metodo reduce resulta em um único valor de saída, 
+    através de um loop, eliminando a necessidade de ter que criar um loop separado*/
+//console.log(somaHabilit)
+
+/* document.body.innerText = 'newArray: ' + JSON.stringify(newArray) + '\n\n' + 'somaHabilit: ' + JSON.stringify(somaHabilit);
+
+document.body.innerText = 'newArray: ' + JSON.stringify(newArray) + "\n\n" +
+  'somaHabilit: ' + JSON.stringify(somaHabilit);
+ */
+
+/* Neste caso, as aspas não estão tornando as variáveis em strings. As aspas são usadas para definir strings literais, mas quando você usa o sinal de mais (+) para concatenar, o JavaScript avalia o conteúdo dentro das variáveis. Então, `JSON.stringify(newArray)` e `JSON.stringify(somaHabilit)` são avaliados como as strings que representam o conteúdo dessas variáveis.
+
+Aqui está o que acontece passo a passo:
+1. `'newArray: '` é uma string literal.
+2. `JSON.stringify(newArray)` converte o conteúdo do array `newArray` em uma string JSON.
+3. O sinal de mais (+) concatena essas duas strings.
+4. `'\n\n'` é uma string literal que representa duas quebras de linha.
+5. Outro sinal de mais (+) concatena a string até agora com essa string de quebra de linha.
+6. `'somaHabilit: '` é outra string literal, que é concatenada à string até agora.
+7. `JSON.stringify(somaHabilit)` converte o número em `somaHabilit` em uma string.
+8. Finalmente, a última operação de concatenação (+) adiciona essa string ao final.
+
+Então, mesmo que as variáveis estejam dentro de aspas, o JavaScript avalia suas expressões antes de fazer a concatenação. Portanto, o resultado final é uma única string que contém os valores dessas variáveis, não seus nomes. Espero que isso esclareça sua dúvida! Se você tiver mais perguntas, fique à vontade para perguntar. */
+
+
+
+CSS:
+
+reset de styles.
+html,body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* font-size: 0; */
+
+}
